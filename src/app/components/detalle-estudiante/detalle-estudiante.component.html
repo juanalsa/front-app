@@ -1,0 +1,33 @@
+<h2>Detalle Estudiante</h2>
+
+<hr/>
+<div *ngIf="estudiante">
+    <div>
+        <label><b>ID: </b></label> {{ estudiante.id }}
+    </div>
+    <div>
+        <label><b>Nombre: </b></label> {{ estudiante.nombre }}
+    </div>
+    <div>
+        <label><b>Apellido: </b></label> {{ estudiante.apellido }}
+    </div>
+    <div>
+        <label><b>Email: </b></label> {{ estudiante.email }}
+    </div>
+    <div>
+        <label><b>Telefono: </b></label> {{ estudiante.telefono }}
+    </div>
+    <div>
+        <label><b>Tipo Identificacion: </b></label> {{ estudiante.abr_identificacion }}
+    </div>
+    <div>
+        <label><b>Nro. Identificacion: </b></label> {{ estudiante.nro_identificacion }}
+    </div>
+    <div>
+        <label><b>Ciudad Ncto.: </b></label> {{ estudiante.ciudad_ncto }}
+    </div>
+</div>
+
+<br>
+<br>
+<button (click)="verListadoEstudiantes()" class="btn btn-primary">Regresar a Lista de Estudiantes</button><br>

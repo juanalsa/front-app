@@ -3,14 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { CrearEstudianteComponent } from './components/crear-estudiante/crear-estudiante.component';
+import { ListarEstudianteComponent } from './components/listar-estudiante/listar-estudiante.component';
+import { EditarEstudianteComponent } from './components/editar-estudiante/editar-estudiante.component';
+import { DetalleEstudianteComponent } from './components/detalle-estudiante/detalle-estudiante.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    CrearEstudianteComponent,
+    ListarEstudianteComponent,
+    EditarEstudianteComponent,
+    DetalleEstudianteComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

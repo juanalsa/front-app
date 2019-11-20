@@ -1,0 +1,35 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Lista de Estudiantes</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Telefono</th>
+                    <th>Tipo Identificacion</th>
+                    <th>Nro. Identificacion</th>
+                    <th>Ciudad Ncto.</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let estudiante of estudiantes">
+                    <td>{{ estudiante.nombre }}</td>
+                    <td>{{ estudiante.apellido }}</td>
+                    <td>{{ estudiante.email }}</td>
+                    <td>{{ estudiante.telefono }}</td>
+                    <td>{{ estudiante.abr_identificacion }}</td>
+                    <td>{{ estudiante.nro_identificacion }}</td>
+                    <td>{{ estudiante.ciudad_ncto }}</td>
+                    <td nowrap><button (click)="eliminarEstudiante(estudiante.id)" class="btn btn-danger">Eliminar</button>
+                        <button (click)="verInfoEstudiante(estudiante.id)" class="btn btn-info" style="margin-left: 10px">Detalle</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
