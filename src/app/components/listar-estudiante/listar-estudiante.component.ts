@@ -28,11 +28,19 @@ export class ListarEstudianteComponent implements OnInit {
   }
 
   eliminarEstudiante(id:number) {
+    this._estudianteService.eliminarEstudiante(id).subscribe( response => {
+      console.log(response);
+      this.cargarDatosEstudiantes();
+    }, error => {
+      console.log(error);
+    });
+  }
 
+  editarEstudiante(id:number) {
+    this._router.navigate(['/editar-estudiante', id]);
   }
 
   verInfoEstudiante(id:number) {
-    // console.log(id);
     this._router.navigate(['/detalle-estudiante', id]);
   }
 

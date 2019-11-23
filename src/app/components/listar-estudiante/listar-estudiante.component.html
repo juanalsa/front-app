@@ -25,8 +25,10 @@
                     <td>{{ estudiante.abr_identificacion }}</td>
                     <td>{{ estudiante.nro_identificacion }}</td>
                     <td>{{ estudiante.ciudad_ncto }}</td>
-                    <td nowrap><button (click)="eliminarEstudiante(estudiante.id)" class="btn btn-danger">Eliminar</button>
-                        <button (click)="verInfoEstudiante(estudiante.id)" class="btn btn-info" style="margin-left: 10px">Detalle</button>
+                    <td nowrap>
+                        <button (click)="eliminarEstudiante(estudiante.id)" class="btn btn-danger">Eliminar</button>&nbsp;
+                        <button (click)="editarEstudiante(estudiante.id)" class="btn btn-secondary">Editar</button>&nbsp;
+                        <button (click)="verInfoEstudiante(estudiante.id)" class="btn btn-info">Detalle</button>
                     </td>
                 </tr>
             </tbody>

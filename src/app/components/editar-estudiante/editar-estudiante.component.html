@@ -1,1 +1,55 @@
-<p>editar-estudiante works!</p>
+<h3>Editar Estudiante</h3>
+
+<div class="alert alert-danger" role="alert" *ngIf="hayErrores">
+    <p>Se han presentado los siguientes errores:</p>
+    <ul>
+        <li *ngFor="let error of errores | keyvalue">{{ error.value }}</li>
+    </ul>
+</div>
+
+<div *ngIf="!frmEnviado && estudiante" style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" required [(ngModel)]="estudiante.nombre" name="nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" class="form-control" id="apellido" required [(ngModel)]="estudiante.apellido" name="apellido">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" required [(ngModel)]="estudiante.email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="telefono">Telefono</label>
+            <input type="text" class="form-control" id="telefono" required [(ngModel)]="estudiante.telefono" name="telefono">
+        </div>
+
+        <div class="form-group">
+            <label for="tipo_identificacion_id">Tipo Identificacion</label>
+            <select name="tipo_identificacion_id" id="tipo_identificacion_id" class="form-control" [(ngModel)]="estudiante.tipo_identificacion_id" required>
+                <option [ngValue]="null" disabled>[Seleccionar Tipo]</option>
+                <option *ngFor="let tipoIdenti of tiposIdentificacion" [value]="tipoIdenti.id">{{ tipoIdenti.nombre }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="nro_identificacion">Nro. Identificacion</label>
+            <input type="text" class="form-control" id="nro_identificacion" required [(ngModel)]="estudiante.nro_identificacion" name="nro_identificacion">
+        </div>
+
+        <div class="form-group">
+            <label for="ciudad_ncto_id">Ciudad Ncto</label>
+            <select name="ciudad_ncto_id" id="ciudad_ncto_id" class="form-control" required [(ngModel)]="estudiante.ciudad_ncto_id">
+                <option [ngValue]="null" disabled>[Seleccionar Ciudad]</option>
+                <option *ngFor="let ciudad of ciudades" [value]="ciudad.id"> {{ ciudad.nombre }} </option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+</div>
